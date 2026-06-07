@@ -1,0 +1,106 @@
+body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background-image: url('miplaza-logo-bn.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    background-position: center;
+    animation: aparecer 1.5s ease forwards, cambioDePosicion 30s linear infinite;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes cambioDePosicion {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-100px, -100px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+.titulo-card{
+    width: 75%;
+}
+.desc-card{
+    width: 75%;
+}
+
+#contenedor::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+#contenedor{
+    max-height: calc(100vh - 150px);
+}
+
+.cardadd {
+    border-radius: 0;
+    border-top-right-radius: 40px !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+@media (max-width:768px) {
+
+    .rounded-start-pill img,
+    .img-list {
+        border-radius: 0;
+        border-top-right-radius: 0 !important;
+        border-top-left-radius: 80px !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+
+    }
+
+    .cardadd {
+        border-radius: 0;
+        border-top-right-radius: 0 !important;
+    }
+}
+
+@media (max-width:576px) {
+
+    .rounded-start-pill img,
+    .img-list {
+        border-radius: 0;
+        border-top-right-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+}
+
+.lista-elementos {
+    transform: translateY(-20px);
+    transition: transform 0.5s ease;
+}
+
+.lista-elementos.mostrar {
+    /* Muestra la lista */
+    transform: translateY(0);
+    /* Restablece la posición original */
+}
