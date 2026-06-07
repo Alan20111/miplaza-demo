@@ -1,0 +1,217 @@
+body::before {
+    filter: blur(5px) brightness(80%);
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background-image: url('miplaza-logo-bn.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    background-position: center;
+    animation: aparecer 1.5s ease forwards, cambioDePosicion 30s linear infinite;
+}
+:root {
+    --verde: #70B34D;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--verde);
+    border-radius: 50px;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0 !important;
+    }
+
+    to {
+        opacity: 1 !important;
+    }
+}
+
+@keyframes cambioDePosicion {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-100px, -100px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.backtittle {}
+
+.img-post {
+    filter: brightness(70%) blur(5px);
+    /* filter:  */
+    /* Rota los colores en 90 grados */
+}
+
+#list-example .active {
+    background: #70B34D !important;
+    animation: aparecer 500ms;
+    color: white !important;
+    border: none !important;
+}
+
+#list-example .active:hover {
+    background: #70B34D !important;
+}
+
+#list-example .active p {
+    color: white !important;
+}
+
+#list-example a:hover {
+    background: #71b34d13 !important;
+    border: 1px solid #70B34D;
+}
+
+.list-nav:hover {
+    background: #ffffffc2 !important;
+}
+
+.visible {
+    animation: card 500ms forwards !important;
+}
+
+.asi1 {
+    order: 1 !important;
+}
+
+.asi2 {
+    order: 2 !important;
+}
+
+.sticky-element {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 50px;
+    /* Punto en el que se vuelve pegajoso */
+}
+
+.img-card {
+    aspect-ratio: 1/1;
+}
+
+.lorem {
+    text-wrap: pretty;
+    text-decoration: underline;
+}
+
+@keyframes card {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        color: rgba(0, 0, 0, 0.438);
+    }
+}
+
+@media (max-width : 992.9px) {
+
+
+    .card-float {
+        padding-bottom: 0 !important;
+    }
+
+    .fondo {
+        height: 40% !important;
+    }
+
+    .lorem {
+        height: 40% !important;
+        width: 75% !important;
+    }
+}
+
+@media (max-width: 767.9px) {
+
+    .sticky-element {
+        position: -webkit-static;
+        /* Safari */
+        position: static;
+    }
+
+    .card-float,
+    .tittle,
+    .descripcion {
+        width: 100%;
+    }
+
+    .conteiner {
+        height: 140vh !important;
+    }
+
+    .asi1,
+    .asi2 {
+        height: 70vh;
+    }
+
+    .asi1 {
+        order: 0 !important;
+    }
+
+    .asi2 {
+        order: 0 !important;
+    }
+}
+
+
+@media (max-width:576.9px) {
+
+    .lorem,
+    .fondo {
+        display: none !important;
+    }
+
+    .card-float,
+    .tittle,
+    .descripcion {
+        width: 100%;
+    }
+
+    .conteiner {
+        height: 140vh !important;
+    }
+
+    .asi1,
+    .asi2 {
+        height: 70vh;
+    }
+}
+
+@media (max-height:500px) {
+
+    .row .tittle img,
+    .card-float,
+    .fondo {
+        scale: 0 !important;
+    }
+
+    .conteiner {
+        height: 30vh !important;
+    }
+}

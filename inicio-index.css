@@ -1,0 +1,388 @@
+:root {
+    --verde: #70B34D;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--verde);
+    border-radius: 50px;
+}
+.txt::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+
+.txt::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.txt::-webkit-scrollbar-thumb {
+    background-color: #634d1d;
+    border-radius: 50px;
+}
+.bg-mvv{
+    background: var(--verde);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+}
+.bg-mvv .col-var{
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+}
+
+@keyframes moverr {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.carousel-item img {
+    filter: brightness(50%) saturate(60%);
+    height: calc(88vh - 196px);
+}
+
+body::before {
+    filter: blur(5px) brightness(90%);
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background-image: url('miplaza-logo-bn.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    background-position: center;
+    animation: aparecer 1.5s ease forwards, cambioDePosicion 30s linear infinite;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0 !important;
+    }
+
+    to {
+        opacity: 1 !important;
+    }
+}
+
+@keyframes cambioDePosicion {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-100px, -100px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+#logo {
+    z-index: 4;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.main-element {
+    min-height: 98px !important;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.card-main,
+.card-body,
+.ubicacion,
+.categorias {
+    max-width: 768px !important;
+}
+
+.card-main {
+    min-width: 768px;
+}
+
+.valores {
+    width: 150px;
+}
+
+.VV {
+    width: 200px;
+}
+
+.carrusel-card {
+    transition: box-shadow 500ms, background 500ms;
+}
+
+.carrusel-card:hover {
+    background: #00000005;
+    box-shadow: rgba(0, 0, 0, 0.363) 0px 10px 10px 0px;
+    transition: box-shadow 500ms, background 500ms;
+}
+
+.visible {
+    animation: moverr 500ms forwards !important;
+}
+
+.descripcion {
+    position: relative;
+    z-index: 5 !important;
+}
+
+.descripcion button {
+    background: var(--verde) !important;
+    animation: aparecer 500ms;
+    color: white !important;
+    border: none !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    text-align: center;
+}
+
+.descripcion button:hover {
+    background: #71b34d13 !important;
+    color: var(--verde)!important;
+    border: 1px solid var(--verde) !important;
+}
+
+.bg-green button {
+    background: #71b34d13 !important;
+    color: var(--verde) !important;
+    border: 1px solid var(--verde) !important;
+    font-weight: 500 !important;
+}
+
+.bg-green button:hover {
+    background: var(--verde) !important;
+    animation: aparecer 500ms;
+    color: white !important;
+    border: none !important;
+}
+
+.m-categorias {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-template-rows: repeat(auto-fit, 150px);
+    justify-content: center;
+    align-content: start;
+}
+
+.container-card {
+    border-radius: 20px;
+}
+
+.ratio1 {
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
+.ratio2 {
+    aspect-ratio: 1/2;
+    width: 100%;
+}
+
+#img-grid-1,
+#img-grid-2,
+#img-grid-3,
+#img-grid-4,
+#img-grid-5,
+#img-grid-6 {
+    transition: filter 500ms, transform 1s;
+    transform: translateY(0px);
+    filter: blur(0.7px) opacity(80%);
+}
+
+#img-grid-1:hover,
+#img-grid-2:hover,
+#img-grid-3:hover,
+#img-grid-4:hover,
+#img-grid-5:hover,
+#img-grid-6:hover {
+    filter: blur(0px) opacity(90%);
+    transform: translateY(-5px);
+    transition: filter 500ms, transform 1s;
+
+}
+
+#card-animation {
+    transition: opacity 500ms;
+}
+
+#bg-blanco {
+    background: linear-gradient(to bottom, #f8f9fa 50%, #f2f2f200) !important;
+}
+
+.card-grid {
+    box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0) translate(0, 0);
+        opacity: 0;
+        transform-origin: center center;
+    }
+
+    50% {
+        transform: scale(1.1) translate(0, 0);
+        opacity: 1;
+        transform-origin: center center;
+    }
+
+    to {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+        transform-origin: center center;
+    }
+}
+
+@keyframes appearbg {
+    from {
+        transform: scale(0) translate(0, 0);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+        transform: scale(1) translate(0, 0);
+    }
+
+    to {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes appear-end {
+    from {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+        transform-origin: center center;
+    }
+
+    50% {
+        transform: scale(1.05) translate(0, 0);
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0) translate(0, 0);
+        transform-origin: center center;
+    }
+}
+
+
+#pop-card {
+    z-index: 6 !important;
+    box-sizing: border-box;
+    top: 150px !important;
+    transform: scale(0);
+}
+
+#blackground {
+    display: none;
+    background: #0000002a;
+    z-index: 5 !important;
+    transition: opacity 1000ms;
+}
+
+#blackground.visible {
+    display: block;
+    opacity: 1;
+}
+
+.pop-class-end {
+    animation: appear-end 400ms forwards;
+}
+
+.pop-class {
+    animation: appear 400ms forwards !important;
+}
+
+
+@keyframes animation-cards {
+    0% {
+        opacity: 1;
+    }
+
+    2% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.card-animation {
+    animation: animation-cards 700ms ease;
+}
+
+.logo {
+    min-height: 160px !important;
+}
+
+@media (max-width: 767.9px) {
+
+    .card-main,
+    .ubicacion,
+    .categorias {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .valores,
+    .VV {
+        width: 150px;
+    }
+}
+@media (max-width: 600px) {
+    .main-element {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    #logo {
+    }
+
+    .m-categorias {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+@media (max-width: 575.9px) {
+    #pop-card {
+        margin-top: 57px;
+        height: 90%;
+    }
+
+
+    #collapseExample {
+        padding: 0 !important;
+    }
+
+    .descripcion button {
+        width: 75% !important;
+    }
+}
+@media (max-width: 200px) {
+    #logo{
+        display: none;
+    }
+}
