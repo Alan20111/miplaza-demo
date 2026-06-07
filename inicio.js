@@ -1,4 +1,4 @@
-const base_url = "http://localhost/Miplaza/";
+const base_url = "";
 
 const cargarcard = (entradas, observador) => {
     entradas.forEach((entrada) => {

@@ -1,4 +1,4 @@
-const base_url = "http://localhost/Miplaza/";
+const base_url = "";
 var tarjetastotal;
 var aco = 0;
 
